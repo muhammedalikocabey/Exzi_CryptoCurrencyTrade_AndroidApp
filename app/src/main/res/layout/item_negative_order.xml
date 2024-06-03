@@ -1,0 +1,46 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="order"
+            type="com.muhammedalikocabey.exzi.data.model.OrderBookEntry.ViewEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/itemRedTextColor"
+            android:textSize="12sp"
+            android:gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/quantityTextView"
+            tools:text="42,897.99" />
+
+        <TextView
+            android:id="@+id/quantityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:paddingTop="1dp"
+            android:paddingBottom="1dp"
+            android:gravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/priceTextView"
+            tools:text="0.0066" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

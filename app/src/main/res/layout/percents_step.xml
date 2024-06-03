@@ -1,0 +1,167 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp">
+
+    <!-- Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0"  />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.225" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.675" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/lineColor"
+        app:layout_constraintStart_toStartOf="@id/dot1"
+        app:layout_constraintEnd_toEndOf="@id/dot5"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:id="@+id/dot1"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/dot_background"
+        app:layout_constraintStart_toStartOf="@+id/guideline0"
+        app:layout_constraintTop_toTopOf="@id/line1"
+        android:layout_marginTop="-8dp" />
+
+    <ImageView
+        android:id="@+id/dot2"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/dot_background"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@id/line1"
+        android:layout_marginTop="-8dp" />
+
+    <ImageView
+        android:id="@+id/dot3"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/dot_background"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/line1"
+        android:layout_marginTop="-8dp" />
+
+    <ImageView
+        android:id="@+id/dot4"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/dot_background"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="@id/line1"
+        android:layout_marginTop="-8dp" />
+
+    <ImageView
+        android:id="@+id/dot5"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:background="@drawable/dot_background"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/line1"
+        android:layout_marginTop="-8dp"
+        />
+
+
+    <TextView
+        android:id="@+id/dot1Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_light"
+        android:text="0%"
+        android:textColor="@color/dotTextColor"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/dot1"
+        app:layout_constraintEnd_toEndOf="@id/dot1"
+        app:layout_constraintStart_toStartOf="@id/dot1"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/dot2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_light"
+        android:text="25%"
+        android:textColor="@color/dotTextColor"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/dot2"
+        app:layout_constraintEnd_toEndOf="@id/dot2"
+        app:layout_constraintStart_toStartOf="@id/dot2"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/dot3Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_light"
+        android:text="50%"
+        android:textColor="@color/dotTextColor"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/dot3"
+        app:layout_constraintEnd_toEndOf="@id/dot3"
+        app:layout_constraintStart_toStartOf="@id/dot3"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/dot4Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_light"
+        android:text="75%"
+        android:textColor="@color/dotTextColor"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/dot4"
+        app:layout_constraintEnd_toEndOf="@id/dot4"
+        app:layout_constraintStart_toStartOf="@id/dot4"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/dot5Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_light"
+        android:text="100%"
+        android:textColor="@color/dotTextColor"
+        android:textSize="8sp"
+        app:layout_constraintTop_toBottomOf="@id/dot5"
+        app:layout_constraintEnd_toEndOf="@id/dot5"
+        app:layout_constraintStart_toStartOf="@id/dot5"
+        android:layout_marginTop="4dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

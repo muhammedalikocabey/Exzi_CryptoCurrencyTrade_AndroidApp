@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_color">#5E17EB</color>
+    <color name="text_secondary">#B3B3B3</color>
+    <color name="dark_gray">#262626</color>
+    <color name="dark_blue">#0C0025</color>
+    <color name="divider">#6F6B6B</color>
+    <color name="black_transparent_light">#7E000000</color>
+    <color name="gray_shade_1">#222227</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#00B27C</color>
+    <color name="colorPrimaryBackground">#0E111B</color>
+    <color name="colorPrimaryBackgroundDarker">#880E111B</color>
+    <color name="colorSecondaryBackground">#151823</color>
+    <color name="activeTextColor">#F4F5F5</color>
+    <color name="passiveTextColor">#A4A8AD</color>
+    <color name="green">#4CAF50</color>
+    <color name="passiveButton">#1B1F2D</color>
+    <color name="darkGray">#2E2E2E</color>
+    <color name="textGreen">#2ED196</color>
+    <color name="descText">#9CA5C4</color>
+    <color name="itemRedTextColor">#E6F65454</color>
+    <color name="itemWhiteTextColor">#F2FAFD</color>
+    <color name="dotTextColor">#A4A8AD</color>
+    <color name="lineColor">#424D70</color>
+    <color name="passiveCurrencyText">#BFC2C5</color>
+    <color name="passiveChartLineColor">#898F94</color>
+    <color name="activeChartLineColor">#DADBDD</color>
+
+</resources>

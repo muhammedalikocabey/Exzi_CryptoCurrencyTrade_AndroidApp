@@ -1,0 +1,782 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.muhammedalikocabey.exzi.presentation.viewmodels.HomeViewModel" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fillViewport="true"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bottomNav"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryBackground"
+                    android:paddingBottom="100dp">
+
+
+                    <ImageView
+                        android:id="@+id/backArrow"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ic_back_arrow"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/leftRightArrowImage"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_left_right_arrow"
+                        app:layout_constraintStart_toEndOf="@id/backArrow"
+                        app:layout_constraintTop_toTopOf="@id/backArrow" />
+
+                    <TextView
+                        android:id="@+id/currenciesName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/activeTextColor"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/leftRightArrowImage"
+                        app:layout_constraintStart_toEndOf="@id/leftRightArrowImage"
+                        app:layout_constraintTop_toTopOf="@+id/leftRightArrowImage"
+                        tools:text="BTC/USDT" />
+
+                    <ImageView
+                        android:id="@+id/blueStarIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_blue_star"
+                        app:layout_constraintEnd_toStartOf="@id/shareIcon"
+                        app:layout_constraintTop_toTopOf="@id/backArrow" />
+
+                    <ImageView
+                        android:id="@+id/shareIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_share"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/backArrow" />
+
+                    <TextView
+                        android:id="@+id/chartTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="Chart"
+                        android:textColor="@color/activeTextColor"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/backArrow"
+                        app:layout_constraintTop_toBottomOf="@id/backArrow" />
+
+                    <TextView
+                        android:id="@+id/infoTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingTop="8dp"
+                        android:text="Info"
+                        android:textColor="@color/passiveTextColor"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toEndOf="@id/chartTab"
+                        app:layout_constraintTop_toTopOf="@id/chartTab" />
+
+                    <View
+                        android:id="@+id/line"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/lineColor"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/chartTab" />
+
+                    <TextView
+                        android:id="@+id/transactionPrice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:textColor="@color/textGreen"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toStartOf="@id/dailyHigh"
+                        app:layout_constraintStart_toStartOf="@id/chartTab"
+                        app:layout_constraintTop_toBottomOf="@id/line"
+                        tools:text="42.897.9" />
+
+                    <TextView
+                        android:id="@+id/transactionPriceGray"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="12dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="=$42.893.05"
+                        android:textColor="@color/passiveCurrencyText"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="@id/transactionPrice"
+                        app:layout_constraintTop_toBottomOf="@id/transactionPrice" />
+
+                    <TextView
+                        android:id="@+id/percentageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:text="+2,44%"
+                        android:textColor="@color/textGreen"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/transactionPriceGray"
+                        app:layout_constraintStart_toEndOf="@id/transactionPriceGray"
+                        app:layout_constraintTop_toTopOf="@+id/transactionPriceGray" />
+
+
+                    <TextView
+                        android:id="@+id/dailyLow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="24h Low"
+                        android:textColor="@color/descText"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/dailyVolume"
+                        app:layout_constraintTop_toTopOf="@id/transactionPrice" />
+
+                    <TextView
+                        android:id="@+id/dailyLowPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="1dp"
+                        android:text="42.421,09"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toStartOf="@id/dailyLow"
+                        app:layout_constraintTop_toBottomOf="@id/dailyLow" />
+
+                    <TextView
+                        android:id="@+id/dailyHigh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="24h High"
+                        android:textColor="@color/descText"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/dailyAmount"
+                        app:layout_constraintTop_toTopOf="@id/transactionPrice" />
+
+                    <TextView
+                        android:id="@+id/dailyHighPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="1dp"
+                        android:text="42.421,09"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toStartOf="@id/dailyHigh"
+                        app:layout_constraintTop_toBottomOf="@id/dailyHigh" />
+
+
+                    <TextView
+                        android:id="@+id/dailyVolume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="24h Volume(USDT)"
+                        android:textColor="@color/descText"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dailyLowPrice" />
+
+                    <TextView
+                        android:id="@+id/dailyVolumePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="1dp"
+                        android:text="42.421,09"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toStartOf="@id/dailyVolume"
+                        app:layout_constraintTop_toBottomOf="@id/dailyVolume" />
+
+                    <TextView
+                        android:id="@+id/dailyAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:text="24h Amount(BTC)"
+                        android:textColor="@color/descText"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toStartOf="@id/dailyVolume"
+                        app:layout_constraintTop_toTopOf="@id/dailyVolume" />
+
+                    <TextView
+                        android:id="@+id/dailyAmountPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:paddingTop="1dp"
+                        android:paddingBottom="1dp"
+                        android:text="42.421,09"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"
+                        app:layout_constraintStart_toStartOf="@id/dailyAmount"
+                        app:layout_constraintTop_toBottomOf="@id/dailyAmount" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/chartSelectionConstraint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="@id/dailyVolumePrice"
+                        app:layout_constraintStart_toStartOf="@id/transactionPrice"
+                        app:layout_constraintTop_toBottomOf="@id/dailyAmountPrice">
+
+                        <TextView
+                            android:id="@+id/lineTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="line"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/fifteenTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/fifteenTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="15m"
+                            android:textColor="@color/activeChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/aHourTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/lineTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/aHourTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="1h"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/fourHourTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/fifteenTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/fourHourTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="4h"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/aDayTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/aHourTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/aDayTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="1d"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/aWeekTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/fourHourTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/aWeekTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="1w"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/moreTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/aDayTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/moreTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:drawableEnd="@drawable/ic_down_arrow"
+                            android:drawablePadding="4dp"
+                            android:gravity="end"
+                            android:text="More"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toStartOf="@+id/depthTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/aWeekTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/depthTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="Depth"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="13sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/moreTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.github.mikephil.charting.charts.CandleStickChart
+                        android:id="@+id/candleStickChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/chartSelectionConstraint" />
+
+                    <com.github.mikephil.charting.charts.CandleStickChart
+                        android:id="@+id/candleStickChart2"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#0E111B"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/candleStickChart" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/algorithmSelectionTab"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="@id/candleStickChart2"
+                        app:layout_constraintStart_toStartOf="@id/candleStickChart2"
+                        app:layout_constraintTop_toBottomOf="@id/candleStickChart2">
+
+                        <TextView
+                            android:id="@+id/maTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="MA"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/emaTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/emaTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="EMA"
+                            android:textColor="@color/activeChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/bollTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/maTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/bollTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="BOLL"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/verticalLine"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/emaTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/verticalLine"
+                            android:layout_width="3dp"
+                            android:layout_height="0dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="10dp"
+                            android:background="#4A4A4A"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/volTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/bollTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/volTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="VOL"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/macdTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/verticalLine"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/macdTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="MACD"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/kdjTAB"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/volTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/kdjTAB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="KDJ"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/rsiTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/macdTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/rsiTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="RSI"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/wrTab"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/kdjTAB"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/wrTab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:gravity="end"
+                            android:text="WR"
+                            android:textColor="@color/passiveChartLineColor"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/rsiTab"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/orderBookTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="Order Book"
+                        android:textColor="@color/activeTextColor"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toStartOf="@id/algorithmSelectionTab"
+                        app:layout_constraintTop_toBottomOf="@id/algorithmSelectionTab" />
+
+                    <TextView
+                        android:id="@+id/recentTradingTab"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:paddingTop="8dp"
+                        android:text="Recent Trading"
+                        android:textColor="@color/passiveTextColor"
+                        android:textSize="13sp"
+                        app:layout_constraintStart_toEndOf="@id/orderBookTab"
+                        app:layout_constraintTop_toTopOf="@id/orderBookTab" />
+
+                    <View
+                        android:id="@+id/line1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="#2C2C2C"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/recentTradingTab" />
+
+                    <View
+                        android:id="@+id/line2"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#FFFFFF"
+                        app:layout_constraintEnd_toEndOf="@id/orderBookTab"
+                        app:layout_constraintStart_toStartOf="@id/orderBookTab"
+                        app:layout_constraintTop_toBottomOf="@id/recentTradingTab" />
+
+                    <View
+                        android:id="@+id/line3"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="#2C2C2C"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/line2"
+                        app:layout_constraintTop_toBottomOf="@id/recentTradingTab" />
+
+                    <TextView
+                        android:id="@+id/quantityText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="6dp"
+                        android:text="Quantity (BTC)"
+                        android:textColor="@color/descText"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+                    <TextView
+                        android:id="@+id/priceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:padding="6dp"
+                        android:text="Price (USDT)"
+                        android:textColor="@color/descText"
+                        android:textSize="10sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/rateCheckBoxConstraint"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/rounded_corner_with_border"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/line1">
+
+                        <TextView
+                            android:id="@+id/rateText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:paddingStart="8dp"
+                            android:paddingTop="4dp"
+                            android:paddingEnd="8dp"
+                            android:paddingBottom="4dp"
+                            android:text="0.1"
+                            android:textColor="@color/activeTextColor"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/dropdownArrow2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:src="@drawable/ic_down_arrow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/positiveOrderRecycler"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/priceText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/negativeOrderRecycler"
+                        app:layout_constraintTop_toBottomOf="@id/quantityText"
+                        tools:itemCount="6"
+                        tools:listitem="@layout/item_positive_candle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/negativeOrderRecycler"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/positiveOrderRecycler"
+                        app:layout_constraintTop_toBottomOf="@id/quantityText"
+                        tools:itemCount="6"
+                        tools:listitem="@layout/item_negative_candle" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+
+            <LinearLayout
+                android:id="@+id/bottomNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSecondaryBackground"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/nav_alert"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_alert" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Alert"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/nav_margin"
+                        android:layout_width="wrap_content"
+                        android:padding="15dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Margin"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/nav_buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_buy" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageView
+                        android:id="@+id/nav_sell"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_sell" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
