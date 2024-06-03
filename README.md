@@ -58,7 +58,7 @@ com.muhammedalikocabey.exzi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/exzi.git
+   git clone https://github.com/muhammedalikocabey/Exzi_CryptoCurrencyTrade_AndroidApp/
 Open the project in Android Studio.
 Sync the project with Gradle files.
 Run the application on an emulator or a physical device.
