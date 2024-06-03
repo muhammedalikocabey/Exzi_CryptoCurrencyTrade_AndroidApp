@@ -32,7 +32,7 @@ Unit tests are written to ensure the correctness of the business logic and the V
 - **Core Testing**: `androidx.arch.core:core-testing` is used for testing LiveData and ViewModel components.
 
 ## Project Structure
-
+```
 com.muhammedalikocabey.exzi
 ├── core
 │ ├── adapters
@@ -52,4 +52,4 @@ com.muhammedalikocabey.exzi
 ├── di
 │ └── AppModule.kt
 └── ExziApp.kt
-
+``` 
