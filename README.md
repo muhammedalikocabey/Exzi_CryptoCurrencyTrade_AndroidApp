@@ -3,20 +3,6 @@
 ## Overview
 The Exzi project is a sample application developed for showcase proficiency in Android development using modern technologies and architectural patterns. The project demonstrates the implementation of the MVVM architecture, use cases, dependency injection with Hilt, and unit testing.
 
-
-Trade Screen Design
-![Trade Screen Design](screenshots/trade_design.png)
-
-Order Book Screen Design
-![Order Book Design](screenshots/order_book_design.png)
-
-Trade Screen Implementation
-![Trade Screen Implementation](screenshots/trade_xml.png)
-
-Order Book Screen Implementation
-![Order Book Implementation](screenshots/order_book_xml.png)
-
-
 ## Technologies and Architectural Patterns
 
 ### MVVM (Model-View-ViewModel)
@@ -113,6 +99,19 @@ Dependencies
         com.google.dagger:hilt-compiler:2.49
     
     Testing: JUnit, Mockito, AndroidX Test
+
+
+Trade Screen Design
+![Trade Screen Design](screenshots/trade_design.png)
+
+Order Book Screen Design
+![Order Book Design](screenshots/order_book_design.png)
+
+Trade Screen Implementation
+![Trade Screen Implementation](screenshots/trade_xml.png)
+
+Order Book Screen Implementation
+![Order Book Implementation](screenshots/order_book_xml.png)
 
 
 
