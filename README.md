@@ -70,10 +70,14 @@ Dependencies
     SwipeRefreshLayout: androidx.swiperefreshlayout:swiperefreshlayout:1.1.0
     Kotlin Serialization: org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2
     AndroidX Libraries: Core KTX, AppCompat, Material, ConstraintLayout
-    Navigation Components: androidx.navigation:navigation-fragment-ktx:2.7.6, androidx.navigation:navigation-ui-ktx:2.7.6
-    ViewModel and LiveData: androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0, androidx.lifecycle:lifecycle-livedata-ktx:2.7.0
+    Navigation Components: androidx.navigation:navigation-fragment-ktx:2.7.6, 
+        androidx.navigation:navigation-ui-ktx:2.7.6
+    ViewModel and LiveData: androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0, 
+        androidx.lifecycle:lifecycle-livedata-ktx:2.7.0
     DataStore: androidx.datastore:datastore-preferences:1.1.0-beta01
-    Retrofit: com.squareup.retrofit2:retrofit:2.9.0, com.squareup.retrofit2:converter-gson:2.9.0
-    Dagger Hilt: com.google.dagger:hilt-android:2.49, com.google.dagger:hilt-compiler:2.49
+    Retrofit: com.squareup.retrofit2:retrofit:2.9.0, 
+        com.squareup.retrofit2:converter-gson:2.9.0
+    Dagger Hilt: com.google.dagger:hilt-android:2.49, 
+        com.google.dagger:hilt-compiler:2.49
     Testing: JUnit, Mockito, AndroidX Test
 ``` 
